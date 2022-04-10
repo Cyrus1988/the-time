@@ -14,14 +14,14 @@ return new class extends Migration {
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id()->index();
-            $table->string('name')->nullable(false);
-            $table->enum('gender', ['male', 'female']);
-            $table->double('price')->default(0);
-            $table->string('description')->nullable(true);
-            $table->string('image')->default('no-image.png');
-            $table->boolean('hit')->default(0);
-            $table->string('slug')->nullable(false);
             $table->foreignId('category_id')->constrained();
+            $table->string('name')->nullable(false);
+            $table->string('slug')->nullable(false);
+            $table->double('price')->default(0);
+            $table->enum('gender', ['male', 'female', 'unisex']);
+            $table->boolean('hit')->default(0);
+            $table->string('image')->default('no-image.png');
+            $table->string('description')->nullable(true);
             $table->timestamps();
         });
     }

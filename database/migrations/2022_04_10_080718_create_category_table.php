@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id()->index();
             $table->integer('parent_id')->nullable();
             $table->string('name')->nullable(false);
-            $table->string('description')->default(null);
             $table->string('slug')->nullable(false);
+            $table->string('description')->default(null);
             $table->string('image')->default('no-image.jpg');
             $table->timestamps();
         });
