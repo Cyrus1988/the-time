@@ -8,7 +8,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
  */
 class ProductFactory extends Factory
 {
@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             'price' => rand(0, 1000),
             'description' => $this->faker->realText,
             'image' => 'no-image.png',
-            'hit' => rand(0, 1),
+            'discount' => Arr::random([0, 20, 50]),
             'slug' => Str::slug($name, '-'),
             'category_id' => rand(1, $categoryCount)
         ];
