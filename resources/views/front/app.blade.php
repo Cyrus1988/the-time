@@ -29,10 +29,6 @@
         </div>
     </div>
 </div>
-@if(Request::path() === '/')
-    @include('front.layouts.components.top.banner')
-@endif
-<!--bottom-header-->
 
 <!--product-starts-->
 @yield('content')

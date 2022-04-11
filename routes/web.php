@@ -21,4 +21,6 @@ use Illuminate\Support\Facades\Route;
 //    return view('front.app');
 //});
 
-Route::get('/', \App\Http\Controllers\HomeController::class);
+Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
+Route::resource('product', \App\Http\Controllers\Front\ProductController::class)->names('front.product');
+Route::resource('category', \App\Http\Controllers\Front\CategoryController::class)->names('front.category');

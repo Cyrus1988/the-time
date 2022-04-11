@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('slug')->nullable(false);
             $table->double('price')->default(0);
             $table->enum('gender', ['male', 'female', 'unisex']);
-            $table->boolean('hit')->default(0);
+            $table->integer('discount')->default(0);
             $table->string('image')->default('no-image.png');
             $table->string('description')->nullable(true);
             $table->timestamps();

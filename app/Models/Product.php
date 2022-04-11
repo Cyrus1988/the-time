@@ -21,4 +21,9 @@ class Product extends Model
         'slug',
         'category_id'
     ];
+
+    public function scopeDiscount($query)
+    {
+        return $query->where('discount','!=',0)->limit(8)->get();
+    }
 }
