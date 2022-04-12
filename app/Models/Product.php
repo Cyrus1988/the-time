@@ -32,8 +32,8 @@ class Product extends Model
         return $query->where('discount', '!=', 0)->limit(8)->get();
     }
 
-    public function scopeBrandByGender($query, $gender)
+    public function scopeBrandByGender($query)
     {
-        return $query->select('brand_id')->where('gender', $gender)->distinct('brand_id')->with('brand')->get();
+        return $query->select('brand_id')->distinct('brand_id')->with('brand')->get();
     }
 }

@@ -35,4 +35,9 @@ class Brand extends Model
 
         return $query->whereIn('id', $productId)->get();
     }
+
+    public function scopeBrand($query)
+    {
+        return $query->select(['id', 'name', 'slug'])->get();
+    }
 }
