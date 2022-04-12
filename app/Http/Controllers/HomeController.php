@@ -17,11 +17,11 @@ class HomeController extends Controller
     {
 
         $discountProduct = Product::discount();
-        $category = Brand::mostFilledBrand();
+        $brands = Brand::mostFilledBrand();
 
         return view('front.home', [
             'products' => $discountProduct,
-            'categories' => $category
+            'brands' => $brands
         ]);
     }
 }

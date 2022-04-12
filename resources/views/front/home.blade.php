@@ -34,14 +34,14 @@
     <div class="about">
         <div class="container">
             <div class="about-top grid-1">
-                @foreach($categories as $category)
+                @foreach($brands as $brand)
                     <div class="col-md-4 about-left">
                         <figure class="effect-bubba">
-                            <a href="{{ route('front.category.show',$category->slug) }}">
+                            <a href="{{ route('front.brand.show',$brand->slug) }}">
                                 <img class="img-responsive" src="images/abt-1.jpg" alt=""/>
                             <figcaption>
-                                <h2>{{ $category->name }}</h2>
-                                <p>{{ Str::limit($category->description,60) }}</p>
+                                <h2>{{ $brand->name }}</h2>
+                                <p>{{ Str::limit($brand->description,60) }}</p>
                             </figcaption></a>
                         </figure>
                     </div>

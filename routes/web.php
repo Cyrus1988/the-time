@@ -23,4 +23,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 Route::resource('product', \App\Http\Controllers\Front\ProductController::class)->names('front.product');
-Route::resource('category', \App\Http\Controllers\Front\BrandController::class)->names('front.category');
+Route::resource('brand', \App\Http\Controllers\Front\BrandController::class)->names('front.brand');
