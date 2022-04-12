@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id()->index();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('brand_id')->constrained();
             $table->string('name')->nullable(false);
             $table->string('slug')->nullable(false);
             $table->double('price')->default(0);

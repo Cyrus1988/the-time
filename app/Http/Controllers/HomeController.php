@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
 
         $discountProduct = Product::discount();
-        $category = Category::mostFilledCategory();
+        $category = Brand::mostFilledBrand();
 
         return view('front.home', [
             'products' => $discountProduct,

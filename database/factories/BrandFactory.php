@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand>
  */
-class CategoryFactory extends Factory
+class BrandFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,12 +19,7 @@ class CategoryFactory extends Factory
     {
         $name = $this->faker->name;
 
-        $maxCount = $this->count;
-
-        $parentId = rand(1, $maxCount);
-
         return [
-            'parent_id' => $parentId,
             'name' => $name,
             'slug' => Str::slug($name, '-'),
             'description' => $this->faker->text,

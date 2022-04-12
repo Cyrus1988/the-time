@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
@@ -21,7 +22,7 @@ class ProductFactory extends Factory
     {
         $name = $this->faker->name;
 
-        $categoryCount = Category::count();
+        $brandCount = Brand::count();
 
         return [
             'name' => $name,
@@ -31,7 +32,7 @@ class ProductFactory extends Factory
             'image' => 'no-image.png',
             'discount' => Arr::random([0, 20, 50]),
             'slug' => Str::slug($name, '-'),
-            'category_id' => rand(1, $categoryCount)
+            'brand_id' => rand(1, $brandCount)
         ];
     }
 }
