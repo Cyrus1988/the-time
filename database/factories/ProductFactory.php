@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Brand;
-use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
@@ -22,6 +22,10 @@ class ProductFactory extends Factory
     {
         $name = $this->faker->name;
 
+        $arrayProductPhoto = $this->preparePhoto();
+
+        $photoId = array_rand($arrayProductPhoto);
+
         $brandCount = Brand::count();
 
         return [
@@ -29,10 +33,27 @@ class ProductFactory extends Factory
             'gender' => Arr::random(['female', 'male', 'unisex']),
             'price' => rand(0, 1000),
             'description' => $this->faker->realText,
-            'image' => 'no-image.png',
+            'image' => $arrayProductPhoto[$photoId],
             'discount' => Arr::random([0, 20, 50]),
             'slug' => Str::slug($name, '-'),
             'brand_id' => rand(1, $brandCount)
         ];
+    }
+
+    private function preparePhoto(): array
+    {
+        $files = Storage::files('public');
+
+        $arrayProductPhoto = [];
+
+        for ($i = 0; $i < count($files); $i++) {
+            $productPhoto = str_replace('public/', '', $files[$i]);
+
+            if (str_starts_with($productPhoto, 'p-')) {
+                $arrayProductPhoto[] = $productPhoto;
+            }
+        }
+
+        return $arrayProductPhoto;
     }
 }

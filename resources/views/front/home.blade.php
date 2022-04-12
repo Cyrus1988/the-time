@@ -39,10 +39,11 @@
                         <figure class="effect-bubba">
                             <a href="{{ route('front.brand.show',$brand->slug) }}">
                                 <img class="img-responsive" src="images/abt-1.jpg" alt=""/>
-                            <figcaption>
-                                <h2>{{ $brand->name }}</h2>
-                                <p>{{ Str::limit($brand->description,60) }}</p>
-                            </figcaption></a>
+                                <figcaption>
+                                    <h2>{{ $brand->name }}</h2>
+                                    <p>{{ Str::limit($brand->description,60) }}</p>
+                                </figcaption>
+                            </a>
                         </figure>
                     </div>
                 @endforeach
@@ -61,7 +62,8 @@
                             <div class="product-main simpleCart_shelfItem">
                                 <a href="{{ route('front.product.show',$product->slug) }}" class="mask"><img
                                         class="img-responsive zoom-img"
-                                        src="images/p-1.png"
+                                        {{-- src="images/p-1.png"--}}
+                                        src="{{ asset('storage/' . $product->image) }}"
                                         alt=""/></a>
                                 <div class="product-bottom">
                                     <h3>{{ $product->name }}</h3>
