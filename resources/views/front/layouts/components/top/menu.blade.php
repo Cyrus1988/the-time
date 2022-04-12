@@ -47,9 +47,9 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </li>--}}
-            <li class="grid"><a href="typo.html">Blog</a>
+            <li class="grid"><a href="#">Blog</a>
             </li>
-            <li class="grid"><a href="contact.html">Contact</a>
+            <li class="grid"><a href="#">Contact</a>
             </li>
         </ul>
     </div>

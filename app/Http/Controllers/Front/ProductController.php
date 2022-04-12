@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -11,13 +14,14 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Factory|View|Application
     {
-        $products = Product::all();
+        $products = Product::paginate(9);
 
-        dd($products);
+        return view('front.pages.product.index',[
+            'products' => $products
+        ]);
     }
 
     /**
@@ -49,7 +53,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('front.pages.product.index');
+        return view('front.pages.product.single');
     }
 
     /**
