@@ -22,8 +22,18 @@ class Product extends Model
         'category_id'
     ];
 
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
     public function scopeDiscount($query)
     {
-        return $query->where('discount','!=',0)->limit(8)->get();
+        return $query->where('discount', '!=', 0)->limit(8)->get();
+    }
+
+    public function scopeBrandByGender($query, $gender)
+    {
+        return $query->select('brand_id')->where('gender', $gender)->distinct('brand_id')->with('brand')->get();
     }
 }

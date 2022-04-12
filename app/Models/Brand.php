@@ -19,6 +19,11 @@ class Brand extends Model
         'image'
     ];
 
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
     public function scopeMostFilledBrand($query)
     {
         $productId = DB::table('products')

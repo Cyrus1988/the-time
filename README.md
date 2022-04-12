@@ -1,3 +1,15 @@
+TODO:
+-menu (view compose)
+-brand page
+-product page
+-filters
+-change currency
+-cart page
+-checkout page
+...
+-admin....
+
+
 Current route:
 
 GET - / - main page.

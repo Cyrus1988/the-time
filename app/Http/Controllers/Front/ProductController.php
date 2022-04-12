@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+
+        dd($products);
     }
 
     /**
@@ -46,7 +49,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('front.pages.product');
+        return view('front.pages.product.index');
     }
 
     /**

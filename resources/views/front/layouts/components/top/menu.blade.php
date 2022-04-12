@@ -1,45 +1,16 @@
 <div class="col-md-9 header-left">
     <div class="top-nav">
         <ul class="memenu skyblue">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href="{{ route('home') }}">Home</a></li>
             <li class="grid"><a href="#">Men</a>
                 <div class="mepanel">
                     <div class="row">
                         <div class="col1 me-one">
-                            <h4>Shop</h4>
+                            <h4>Watches</h4>
                             <ul>
-                                <li><a href="products.html">New Arrivals</a></li>
-                                <li><a href="products.html">Blazers</a></li>
-                                <li><a href="products.html">Swem Wear</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Handbags</a></li>
-                                <li><a href="products.html">T-Shirts</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">My Shopping Bag</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Style Zone</h4>
-                            <ul>
-                                <li><a href="products.html">Shoes</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">Brands</a></li>
-                                <li><a href="products.html">Coats</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Trousers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Popular Brands</h4>
-                            <ul>
-                                <li><a href="products.html">499 Store</a></li>
-                                <li><a href="products.html">Fastrack</a></li>
-                                <li><a href="products.html">Casio</a></li>
-                                <li><a href="products.html">Fossil</a></li>
-                                <li><a href="products.html">Maxima</a></li>
-                                <li><a href="products.html">Timex</a></li>
-                                <li><a href="products.html">TomTom</a></li>
-                                <li><a href="products.html">Titan</a></li>
+                                @foreach($male as $maleProduct)
+                                    <li><a href="{{ route('front.brand.show', $maleProduct->brand->slug) }}">{{ $maleProduct->brand->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -49,83 +20,27 @@
                 <div class="mepanel">
                     <div class="row">
                         <div class="col1 me-one">
-                            <h4>Shop</h4>
+                            <h4>Watches</h4>
                             <ul>
-                                <li><a href="products.html">New Arrivals</a></li>
-                                <li><a href="products.html">Blazers</a></li>
-                                <li><a href="products.html">Swem Wear</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Handbags</a></li>
-                                <li><a href="products.html">T-Shirts</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">My Shopping Bag</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Style Zone</h4>
-                            <ul>
-                                <li><a href="products.html">Shoes</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">Brands</a></li>
-                                <li><a href="products.html">Coats</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Trousers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Popular Brands</h4>
-                            <ul>
-                                <li><a href="products.html">499 Store</a></li>
-                                <li><a href="products.html">Fastrack</a></li>
-                                <li><a href="products.html">Casio</a></li>
-                                <li><a href="products.html">Fossil</a></li>
-                                <li><a href="products.html">Maxima</a></li>
-                                <li><a href="products.html">Timex</a></li>
-                                <li><a href="products.html">TomTom</a></li>
-                                <li><a href="products.html">Titan</a></li>
+                                @foreach($female as $femaleProduct)
+                                    <li><a href="{{ route('front.brand.show', $femaleProduct->brand->slug) }}">{{ $femaleProduct->brand->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="grid"><a href="#">Kids</a>
+            <li class="grid"><a href="#">Unisex</a>
                 <div class="mepanel">
                     <div class="row">
                         <div class="col1 me-one">
-                            <h4>Shop</h4>
+                            <h4>Watches</h4>
                             <ul>
-                                <li><a href="products.html">New Arrivals</a></li>
-                                <li><a href="products.html">Blazers</a></li>
-                                <li><a href="products.html">Swem Wear</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Handbags</a></li>
-                                <li><a href="products.html">T-Shirts</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">My Shopping Bag</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Style Zone</h4>
-                            <ul>
-                                <li><a href="products.html">Shoes</a></li>
-                                <li><a href="products.html">Watches</a></li>
-                                <li><a href="products.html">Brands</a></li>
-                                <li><a href="products.html">Coats</a></li>
-                                <li><a href="products.html">Accessories</a></li>
-                                <li><a href="products.html">Trousers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col1 me-one">
-                            <h4>Popular Brands</h4>
-                            <ul>
-                                <li><a href="products.html">499 Store</a></li>
-                                <li><a href="products.html">Fastrack</a></li>
-                                <li><a href="products.html">Casio</a></li>
-                                <li><a href="products.html">Fossil</a></li>
-                                <li><a href="products.html">Maxima</a></li>
-                                <li><a href="products.html">Timex</a></li>
-                                <li><a href="products.html">TomTom</a></li>
-                                <li><a href="products.html">Titan</a></li>
+                                <ul>
+                                    @foreach($unisex as $unisexProduct)
+                                        <li><a href="{{ route('front.brand.show', $unisexProduct->brand->slug) }}">{{ $unisexProduct->brand->name }}</a></li>
+                                    @endforeach
+                                </ul>
                             </ul>
                         </div>
                     </div>
