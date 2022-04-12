@@ -1,20 +1,22 @@
-TODO:
--menu (view compose)
--brand page
--product page
--filters
--change currency
--cart page
--checkout page
-...
--admin....
+##TODO:
+1. menu (view compose)
+2. brand page
+3. product page
+4. filters
+5. change currency
+6. cart page
+7. checkout page
+8. admin....
+9. api...
 
 
-Current route:
+###Current route:
+| Method        | Url                           | ControllerMethod |description|
+| ------------- |:--------------                |:----------------:|----------------|
+| GET           | /                 |     __invoke     |Home route|
+| GET          | /product/{slug}               |      show       |Show product by slug|
+| GET           | /brand/{slug}          |       show       |Show brand by slug|
 
-GET - / - main page.
-GET - /product/{slug} - single product page
-GET - /category/{slug} - category page
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
