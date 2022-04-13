@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\ProductFilter;
+use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,12 +17,18 @@ class ProductController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index(): Factory|View|Application
+    public function index(Request $request, ProductFilter $filter): Factory|View|Application
     {
-        $products = Product::paginate(9);
+        $products = Product::filter($filter)->paginate(9);
 
-        return view('front.pages.product.index',[
-            'products' => $products
+        $brands = Brand::all();
+
+        $filters = $request->query();
+
+        return view('front.pages.product.index', [
+            'products' => $products,
+            'filters' => $filters,
+            'brands' => $brands,
         ]);
     }
 

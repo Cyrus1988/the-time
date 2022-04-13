@@ -30,7 +30,7 @@ class ProductFactory extends Factory
 
         return [
             'name' => $name,
-            'gender' => Arr::random(['female', 'male', 'unisex']),
+            'gender' => Arr::random(['female', 'male', 'kids']),
             'price' => rand(0, 1000),
             'description' => $this->faker->realText,
             'image' => $arrayProductPhoto[$photoId],
