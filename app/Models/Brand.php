@@ -38,6 +38,6 @@ class Brand extends Model
 
     public function scopeBrand($query)
     {
-        return $query->select(['id', 'name', 'slug'])->get();
+        return $query->select(['id', 'name', 'slug'])->get()->toArray();
     }
 }

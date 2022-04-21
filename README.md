@@ -1,5 +1,5 @@
 ##TODO:
-1. menu (view compose)
+1. menu (view compose) + done with cache
 2. brand page
 3. product page
 4. filters
