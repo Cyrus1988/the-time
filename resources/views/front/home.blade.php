@@ -38,7 +38,7 @@
                     <div class="col-md-4 about-left">
                         <figure class="effect-bubba">
                             <a href="{{ route('front.brand.show',$brand->slug) }}">
-                                <img class="img-responsive" src="images/abt-1.jpg" alt=""/>
+                                <img class="img-responsive" src="{{ asset('storage/' . $brand->image)}}" alt=""/>
                                 <figcaption>
                                     <h2>{{ $brand->name }}</h2>
                                     <p>{{ Str::limit($brand->description,60) }}</p>
