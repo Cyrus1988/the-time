@@ -8,6 +8,8 @@ use ReflectionClass;
 
 class MenuCache implements ICache
 {
+    const CACHE_TIME = 600; // 10 minutes
+
     /**
      * Set cache
      * @param $content
@@ -15,7 +17,7 @@ class MenuCache implements ICache
      */
     public function setCache($content): void
     {
-        Cache::put($this->getKey(), $content);
+        Cache::put($this->getKey(), $content, self::CACHE_TIME);
     }
 
     /**
