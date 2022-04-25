@@ -2,14 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Contracts\GetPhotoForFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand>
  */
-class BrandFactory extends Factory
+class BrandFactory extends Factory implements GetPhotoForFactory
 {
+    const PATH = 'public/brand';
+
     /**
      * Define the model's default state.
      *
@@ -19,15 +23,26 @@ class BrandFactory extends Factory
     {
         $name = $this->faker->name;
 
-        $brandPhotos = ['no-image.png', 'abt-1.jpg', 'abt-2.jpg', 'abt-3.jpg'];
-
-        $photoName = $brandPhotos[array_rand($brandPhotos)];
+        $arrayPhoto = $this->preparePhoto();
 
         return [
             'name' => $name,
             'slug' => Str::slug($name, '-'),
             'description' => $this->faker->text,
-            'image' => $photoName
+            'image' => $arrayPhoto[array_rand($arrayPhoto)],
         ];
+    }
+
+    public function preparePhoto(): array
+    {
+        $files = Storage::files(self::PATH);
+
+        $arrayPhoto = [];
+
+        for ($i = 0; $i < count($files); $i++) {
+            $arrayPhoto[] = str_replace(self::PATH . '/', '', $files[$i]);
+        }
+
+        return $arrayPhoto;
     }
 }

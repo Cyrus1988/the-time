@@ -2,17 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Contracts\GetPhotoForFactory;
 use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Product>
  */
-class ProductFactory extends Factory
+class ProductFactory extends Factory implements GetPhotoForFactory
 {
+    const PATH = 'public';
+
     /**
      * Define the model's default state.
      *
@@ -22,9 +26,7 @@ class ProductFactory extends Factory
     {
         $name = $this->faker->name;
 
-        $arrayProductPhoto = $this->preparePhoto();
-
-        $photoId = array_rand($arrayProductPhoto);
+        $arrayPhoto = $this->preparePhoto();
 
         $brandCount = Brand::count();
 
@@ -33,21 +35,21 @@ class ProductFactory extends Factory
             'gender' => Arr::random(['female', 'male', 'kids']),
             'price' => rand(0, 1000),
             'description' => $this->faker->realText,
-            'image' => $arrayProductPhoto[$photoId],
+            'image' => $arrayPhoto[array_rand($arrayPhoto)],
             'discount' => Arr::random([0, 20, 50]),
             'slug' => Str::slug($name, '-'),
             'brand_id' => rand(1, $brandCount)
         ];
     }
 
-    private function preparePhoto(): array
+    public function preparePhoto(): array
     {
-        $files = Storage::files('public');
+        $files = Storage::files(self::PATH);
 
         $arrayProductPhoto = [];
 
         for ($i = 0; $i < count($files); $i++) {
-            $productPhoto = str_replace('public/', '', $files[$i]);
+            $productPhoto = str_replace(self::PATH . '/', '', $files[$i]);
 
             if (str_starts_with($productPhoto, 'p-')) {
                 $arrayProductPhoto[] = $productPhoto;
