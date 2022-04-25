@@ -10,6 +10,6 @@ class MenuCacheDriver extends ACache
      */
     public function getCacheDriver(): ICache
     {
-        return new MenuICache();
+        return new MenuCache();
     }
 }

@@ -6,7 +6,7 @@ use App\Models\Brand;
 use Illuminate\Support\Facades\Cache;
 use ReflectionClass;
 
-class MenuICache implements ICache
+class MenuCache implements ICache
 {
     /**
      * Set cache
