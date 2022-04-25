@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\ProductFilter;
-use App\Models\Brand;
-use App\Models\Product;
+use App\Repositories\Front\BrandRepository;
+use App\Repositories\Front\ProductRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,15 +13,20 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct(private ProductRepository $productRepository, private BrandRepository $brandRepository)
+    {
+    }
+
     /**
      * Display a listing of the resource.
      *
      */
     public function index(Request $request, ProductFilter $filter): Factory|View|Application
     {
-        $products = Product::filter($filter)->paginate(9);
+        $products = $this->productRepository->getByFilter($filter);
 
-        $brands = Brand::all();
+        $brands = $this->brandRepository->getAll();
 
         $filters = $request->query();
 
@@ -33,68 +38,17 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param string $slug
+     * @return Application|Factory|View
      */
-    public function show($id)
+    public function show(string $slug): View|Factory|Application
     {
-        return view('front.pages.product.single');
-    }
+        $product = $this->productRepository->getBySlug($slug);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('front.pages.product.single', [
+            'product' => $product
+        ]);
     }
 }
