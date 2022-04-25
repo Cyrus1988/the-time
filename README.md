@@ -1,13 +1,14 @@
 ##TODO:
 1. menu (view compose) + done with cache
-2. brand page
+2. brand page + done
 3. product page
-4. filters
+4. filters for products page
 5. change currency
 6. cart page
 7. checkout page
 8. admin....
-9. api...
+9. After add brand need to recache
+10. api...
 
 
 ###Current route:
