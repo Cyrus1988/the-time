@@ -1,14 +1,19 @@
-##TODO:
+## DONE:
 1. menu (view compose) + done with cache
 2. brand page + done
-3. product page
-4. filters for products page
-5. change currency
-6. cart page
-7. checkout page
-8. admin....
-9. After add brand need to recache
-10. api...
+3. filters for products page + done (filter by category, brand, discount)
+4. product page + done (50%)
+
+## TODO:
+1. breadcrumbs
+2. reviews
+3. product image gallery
+4. change currency
+5. cart page
+6. checkout page
+7. admin....
+8. After add brand need to re-cache (add obs with job)
+9. api...
 
 
 ###Current route:
