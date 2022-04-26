@@ -7,14 +7,15 @@
 
 ## TODO:
 2. reviews
-3. product image gallery
-4. change currency
-5. cart page
-6. checkout page
-7. admin....
-8. after add brand need to re-cache (add obs with job)
-9. api...
-10. mail or chat notification after order confirmation by admin
+3. user auth and login
+4. product image gallery
+5. change currency
+6. cart page
+7. checkout page
+8. admin....
+9. after add brand need to re-cache (add obs with job)
+10. api...
+11. mail or chat notification after order confirmation by admin
 
 
 ###Current route:

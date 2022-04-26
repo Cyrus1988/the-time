@@ -28,6 +28,11 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function scopeDiscount($query)
     {
         return $query->where('discount', '!=', 0)->limit(8)->get();
