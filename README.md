@@ -1,25 +1,27 @@
 ## DONE:
-1. menu (view compose) + done with cache
-2. brand page + done
-3. filters for products page + done (filter by category, brand, discount)
+1. menu (view compose) + done with cache (100%)
+2. brand page + done (100%)
+3. filters for products page + done (filter by category, brand, discount) (100%)
 4. product page + done (50%)
+5. breadcrumbs (100%)
 
 ## TODO:
-1. breadcrumbs
 2. reviews
 3. product image gallery
 4. change currency
 5. cart page
 6. checkout page
 7. admin....
-8. After add brand need to re-cache (add obs with job)
+8. after add brand need to re-cache (add obs with job)
 9. api...
+10. mail or chat notification after order confirmation by admin
 
 
 ###Current route:
 | Method        | Url                           | ControllerMethod |description|
 | ------------- |:--------------                |:----------------:|----------------|
 | GET           | /                 |     __invoke     |Home route|
+| GET          | /product/               |      index       |Show all products |
 | GET          | /product/{slug}               |      show       |Show product by slug|
 | GET           | /brand/{slug}          |       show       |Show brand by slug|
 
