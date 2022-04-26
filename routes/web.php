@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Front\BrandController;
-use App\Http\Controllers\Front\ProductController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Front\Brands\BrandController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\Products\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +15,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-//Route::get('/', function () {
-//    return view('front.app');
-//});
 
 Route::get('/', HomeController::class)->name('home');
-Route::resource('product', ProductController::class)->names('front.product');
-Route::get('brand/{slug}', [BrandController::class, 'show'])->name('front.brand.show');
+
+Route::resource('product', ProductController::class)
+    ->only(['index', 'show'])
+    ->names('front.product');
+
+Route::resource('brand', BrandController::class)
+    ->only(['index', 'show'])
+    ->names('front.brand');
+

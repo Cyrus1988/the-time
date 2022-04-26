@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Front\Products;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Front\FrontController;
 use App\Http\Filters\ProductFilter;
 use App\Repositories\Front\BrandRepository;
 use App\Repositories\Front\ProductRepository;
@@ -11,11 +11,14 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductController extends FrontController
 {
+    protected string $main_name = 'Products';
+    protected string $main_route = 'front.product.index';
 
     public function __construct(private ProductRepository $productRepository, private BrandRepository $brandRepository)
     {
+        parent::__construct();
     }
 
     /**
@@ -45,7 +48,9 @@ class ProductController extends Controller
      */
     public function show(string $slug): View|Factory|Application
     {
-        $product = $this->productRepository->getBySlug($slug);
+        $rep = new ProductRepository();
+
+        $product = $rep->getBySlug($slug);
 
         return view('front.pages.product.single', [
             'product' => $product

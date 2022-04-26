@@ -28,3 +28,8 @@
         </div>
     </div>
 </div>
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    @include('front.layouts.components.top.breadcrumbs')
+</div>
+<!--end-breadcrumbs-->

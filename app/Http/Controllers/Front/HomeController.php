@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Contracts\Foundation\Application;
@@ -15,7 +16,6 @@ class HomeController extends Controller
      */
     public function __invoke(): View|Factory|Application
     {
-
         $discountProduct = Product::discount();
         $brands = Brand::mostFilledBrand();
 
