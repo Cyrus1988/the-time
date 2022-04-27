@@ -1,11 +1,11 @@
 @include('front.layouts.header')
 <!--top-info-block-starts-->
-@include('front.layouts.components.top')
+@include('front.components.top')
 <!--top-info-block-end-->
 <!--product-starts-->
 @yield('content')
 <!--product-end-->
 <!--information-starts-->
-@include('front.layouts.components.bottom')
+@include('front.components.bottom')
 <!--information-end-->
 @include('front.layouts.footer')
