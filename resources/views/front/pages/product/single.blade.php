@@ -21,10 +21,9 @@
                                 </ul>
                             </div>
                             <!-- FlexSlider -->
-                            <script src="/js/imagezoom.js"></script>
-                            <script defer src="/js/jquery.flexslider.js"></script>
-                            <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
-
+                            <script src="{{ asset("js/theme/imagezoom.js") }}"></script>
+                            <script defer src="{{ asset("js/theme/jquery.flexslider.js") }}"></script>
+                            <link rel="stylesheet" href="{{ asset('css/theme/flexslider.css') }}" type="text/css" media="screen" />
                             <script>
                                 // Can also be used with $(document).ready()
                                 $(window).load(function() {
