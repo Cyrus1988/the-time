@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
+//
+//require __DIR__.'/auth.php';
+
+
 Route::get('/', HomeController::class)->name('home');
 
 Route::resource('product', ProductController::class)
@@ -26,3 +37,4 @@ Route::resource('brand', BrandController::class)
     ->only(['index', 'show'])
     ->names('front.brand');
 
+Route::get('cabinet')->name('cabinet');
