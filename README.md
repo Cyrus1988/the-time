@@ -4,7 +4,7 @@
 3. filters for products page + done (filter by category, brand, discount) (100%)
 4. product page + done (50%)
 5. breadcrumbs (100%)
-6. user auth and login + done (90%)
+6. user auth and login + done (100%)
 
 ## TODO:
 2. reviews
