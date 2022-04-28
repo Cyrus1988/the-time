@@ -1,0 +1,32 @@
+# folder public
+/public/hot
+/public/storage
+/public/css
+/public/img
+/public/js
+/public/vendor
+/public/mix-manifest.json
+/public/web.config
+
+# temp layouts
+/resources/views/layouts
+/resources/views/dashboard.blade.php
+/resources/views/welcome.blade.php
+/resources/views/auth
+/resources/views/components
+
+
+/node_modules
+
+/storage/*.key
+/vendor
+
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
