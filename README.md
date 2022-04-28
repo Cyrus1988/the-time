@@ -8,6 +8,7 @@
 
 ## TODO:
 2. reviews
+3. 404
 4. product image gallery
 5. change currency
 6. cart page

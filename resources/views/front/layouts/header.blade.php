@@ -15,7 +15,7 @@
     <meta name="keywords" content="Luxury Watches | Laravel Shop" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--start-menu-->
-    <script src="{{ asset('/js/theme/simpleCart.min.js') }}"> </script>
+{{--    <script src="{{ asset('/js/theme/simpleCart.min.js') }}"> </script>--}}
     <link href="{{ asset('/css/theme/memenu.css') }}" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src=" {{ asset('/js/theme/memenu.js') }}"></script>
     <script>$(document).ready(function(){$(".memenu").memenu();});</script>
