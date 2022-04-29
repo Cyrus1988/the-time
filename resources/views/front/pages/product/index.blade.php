@@ -18,7 +18,7 @@
                                         <h3>{{ $product->name }}</h3>
                                         <p>Explore Now</p>
                                         <h4><a class="item_add" href="#"><i></i></a> <span
-                                                class=" item_price">$ {{ $product->price - ($product->price * $product->discount / 100) }}</span>
+                                                class=" item_price">$ {{ $product->price }}</span>
                                         </h4>
                                     </div>
                                     @if($product->discount != 0)

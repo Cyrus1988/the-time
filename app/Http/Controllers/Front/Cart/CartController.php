@@ -3,38 +3,52 @@
 namespace App\Http\Controllers\Front\Cart;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Front\FrontController;
-use App\Models\Product;
-use Darryldecode\Cart\Cart;
+use App\Repositories\Front\ProductRepository;
+use App\Services\Front\CartService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class CartController extends Controller
 {
-    public function index()
+
+    public function __construct(private CartService $cartService, private ProductRepository $productRepository)
     {
-        // TODO cart index-view-page
-        return view('front.pages.cart.index');
     }
 
-    //TODO service layer
-    public function addToCart(Request $request)
+    /**
+     * Get all products from cart in session
+     * @return Application|Factory|View
+     */
+    public function index(): View|Factory|Application
     {
-        $product = Product::find($request->id);
-
-        $sessionId = Auth::user()->id;
-
-        \Cart::session($sessionId);
-
-//        // add the product to cart
-        \Cart::add([
-            'id' => $product->id,
-            'name' => $product->name,
-            // TODO с прайсом нужно будет что то сделать, это полная дичь, мб cast мб что то еще
-            'price' => ($product->price - ($product->price * $product->discount / 100)),
-            'quantity' => 1
+        return view('front.pages.cart.index', [
+            'items' => $this->cartService->getContent()
         ]);
+    }
 
-        return response()->json(\Cart::getContent());
+    /**
+     * Add to cart in current session
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function addToCart(Request $request): JsonResponse
+    {
+        $product = $this->productRepository->getById($request->id);
+
+        $this->cartService->addToCart($product);
+
+        return response()->json($this->cartService->getContent());
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function remove(Request $request)
+    {
+        $this->cartService->removeById($request->id);
     }
 }

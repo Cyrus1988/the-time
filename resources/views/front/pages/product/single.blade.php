@@ -15,7 +15,6 @@
             let total_price = parseInt($('.simpleCart_total').text());
             let price = parseInt($('.item_price_p').text());
             let new_total_price = price + total_price;
-
             $('.simpleCart_total').text(new_total_price);
 
             $.ajax({
@@ -96,7 +95,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <h5 class="item_price_p">
-                                    {{$product->price - ($product->price * $product->discount / 100)}}</h5>
+                                    {{$product->price}}</h5>
                                 <p>{{ Str::limit($product->description,60) }}</p>
                                 <div class="available">
                                     <ul>

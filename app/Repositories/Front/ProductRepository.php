@@ -11,6 +11,15 @@ class ProductRepository
     const SHOP_PAGE_PRODUCT_PAGINATE_COUNT = 9;
 
     /**
+     * @param int $id
+     * @return Product
+     */
+    public function getById(int $id): Product
+    {
+        return Product::find($id);
+    }
+
+    /**
      * @param string $slug
      * @return Product
      */

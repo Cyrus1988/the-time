@@ -38,4 +38,5 @@ Route::get('cabinet')->name('cabinet');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('remove-cart', [CartController::class, 'remove'])->name('cart.remove');
 });
