@@ -23,6 +23,11 @@ class Product extends Model
         'category_id'
     ];
 
+    public function getPriceAttribute($value)
+    {
+        return $this->attributes['price'] - ($this->attributes['price'] * $this->attributes['discount'] / 100);
+    }
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
