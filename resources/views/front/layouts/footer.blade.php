@@ -16,5 +16,6 @@
     </div>
 </div>
 <!--footer-end-->
+@stack('footer-scripts')
 </body>
 </html>

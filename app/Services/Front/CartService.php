@@ -56,4 +56,24 @@ class CartService
 
         \Cart::remove($id);
     }
+
+    /**
+     * @return void
+     */
+    public function clear(): void
+    {
+        $this->getCartSession();
+
+        \Cart::clear();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmpty(): bool
+    {
+        $this->getCartSession();
+
+        return \Cart::isEmpty();
+    }
 }
