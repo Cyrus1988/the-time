@@ -5,14 +5,14 @@
 4. product page + done (50%)
 5. breadcrumbs (100%)
 6. user auth and login + done (100%)
+7. cart page (100%)
+8. checkout(order controller,service,repository) page (100%)
 
 ## TODO:
 2. reviews
 3. 404
 4. product image gallery
 5. change currency
-6. cart page
-7. checkout page
 8. admin....
 9. after add brand need to re-cache (add obs with job)
 10. api...
