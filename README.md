@@ -9,14 +9,14 @@
 8. checkout(order controller,service,repository) page (100%)
 
 ## TODO:
-2. reviews
-3. 404
-4. product image gallery
-5. change currency
-8. admin....
-9. after add brand need to re-cache (add obs with job)
-10. api...
-11. mail or chat notification after order confirmation by admin
+1. reviews
+2. 404
+3. product image gallery
+4. change currency
+5. admin....
+6. after add brand need to re-cache (add obs with job)
+7. api...
+8. mail or chat notification after order confirmation by admin
 
 
 ###Current route:
