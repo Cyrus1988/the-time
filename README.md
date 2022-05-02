@@ -8,11 +8,11 @@
 6. user auth and login + done (100%)
 7. cart page (100%)
 8. checkout(order controller,service,repository) page (100%)
+9. 404 and other errors-page (100%)
 
 ## TODO:
 
 1. reviews
-2. 404
 3. product image gallery
 4. change currency
 5. admin....
