@@ -11,22 +11,26 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/theme/jquery-1.11.0.min.js", "public/js/theme")
-    .js("resources/js/theme/imagezoom.js", "public/js/theme")
-    .js("resources/js/theme/jquery.easydropdown.js", "public/js/theme")
-    .js("resources/js/theme/jquery.flexslider.js", "public/js/theme")
-    .js("resources/js/theme/memenu.js", "public/js/theme")
-    .js("resources/js/theme/responsiveslides.min.js", "public/js/theme")
-    .js("resources/js/theme/simpleCart.min.js", "public/js/theme")
-    .postCss('resources/css/app.css', 'public/css', [
+/* FRONT */
+mix.js("resources/front/js/app.js", "public/front/js")
+    .js("resources/front/js/theme/jquery-1.11.0.min.js", "public/front/js/theme")
+    .js("resources/front/js/theme/imagezoom.js", "public/front/js/theme")
+    .js("resources/front/js/theme/jquery.easydropdown.js", "public/front/js/theme")
+    .js("resources/front/js/theme/jquery.flexslider.js", "public/front/js/theme")
+    .js("resources/front/js/theme/memenu.js", "public/front/js/theme")
+    .js("resources/front/js/theme/responsiveslides.min.js", "public/front/js/theme")
+    .js("resources/front/js/theme/simpleCart.min.js", "public/front/js/theme")
+    .postCss('resources/front/css/app.css', 'public/front/css', [
         require('postcss-import'),
         require('tailwindcss'),
         require('autoprefixer'),
-    ]).css('resources/css/theme/style.css', 'public/css/theme')
-    .css('resources/css/theme/flexslider.css', 'public/css/theme')
-    .css('resources/css/theme/memenu.css', 'public/css/theme')
-    .css('resources/css/theme/bootstrap.css', 'public/css/theme');
+    ]).css('resources/front/css/theme/style.css', 'public/front/css/theme')
+    .css('resources/front/css/theme/flexslider.css', 'public/front/css/theme')
+    .css('resources/front/css/theme/memenu.css', 'public/front/css/theme')
+    .css('resources/front/css/theme/bootstrap.css', 'public/front/css/theme');
 
-mix.copyDirectory("resources/fonts", "public/fonts");
-mix.copyDirectory("resources/images", "public/images");
+mix.copyDirectory("resources/front/fonts", "public/front/fonts");
+mix.copyDirectory("resources/front/images", "public/front/images");
+
+/* BACK|ADMIN */
+mix.copyDirectory("resources/back", "public/back");

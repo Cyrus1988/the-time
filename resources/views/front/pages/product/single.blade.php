@@ -63,9 +63,9 @@
                                 </ul>
                             </div>
                             <!-- FlexSlider -->
-                            <script src="{{ asset("js/theme/imagezoom.js") }}"></script>
-                            <script defer src="{{ asset("js/theme/jquery.flexslider.js") }}"></script>
-                            <link rel="stylesheet" href="{{ asset('css/theme/flexslider.css') }}" type="text/css"
+                            <script src="{{ asset("/front/js/theme/imagezoom.js") }}"></script>
+                            <script defer src="{{ asset("/front/js/theme/jquery.flexslider.js") }}"></script>
+                            <link rel="stylesheet" href="{{ asset('/front/css/theme/flexslider.css') }}" type="text/css"
                                   media="screen"/>
                             <script>
                                 // Can also be used with $(document).ready()

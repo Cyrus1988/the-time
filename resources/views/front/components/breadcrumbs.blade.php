@@ -7,7 +7,7 @@
                         @if($breadcrumb['is_active'] === true)
                             <li class="active">{{$breadcrumb['name']}}</li>
                         @else
-                            <li><a href="{{ route('home') }}">{{$breadcrumb['name']}}</a></li>
+                            <li><a href="{{ route('front.home') }}">{{$breadcrumb['name']}}</a></li>
                         @endif
                     @endforeach
                 </ol>

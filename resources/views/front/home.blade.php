@@ -1,7 +1,7 @@
 @extends('front.app')
 
 @push('header-scripts')
-    <script src="{{ asset("js/theme/responsiveslides.min.js") }}"></script>
+    <script src="{{ asset("/front/js/theme/responsiveslides.min.js") }}"></script>
     <script>
         // You can also use "$(window).load(function() {"
         $(function () {
@@ -27,7 +27,7 @@
 
 @section('content')
     <!--banner-starts-->
-    @include('front.components.top.slider')
+    @include('front.components.slider')
     <!--banner-ends-->
     <!--Slider-Starts-Here-->
     <!--about-starts-->

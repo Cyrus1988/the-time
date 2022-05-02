@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::get('/', HomeController::class)->name('home');
+
+Route::get('/', HomeController::class)->name('front.home');
 
 ## PRODUCT
 Route::resource('product', ProductController::class)
@@ -43,3 +44,4 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('orders', OrderController::class)->only('store')->names('front.order');
 });
+

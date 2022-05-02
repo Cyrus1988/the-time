@@ -26,9 +26,9 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('front.components.top.menu', MenuComposer::class);
+        View::composer('front.components.menu', MenuComposer::class);
 
-        View::composer(['front.components.top.breadcrumbs','front.layouts.header'], function ($view) {
+        View::composer(['front.components.breadcrumbs','front.layouts.header'], function ($view) {
             $breadcrumbs = BreadCrumbs::getInstance();
 
             $view->with('breadcrumbs', $breadcrumbs->getBreadCrumbs());

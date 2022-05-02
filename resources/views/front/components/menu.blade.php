@@ -1,7 +1,7 @@
 <div class="col-md-9 header-left">
     <div class="top-nav">
         <ul class="memenu skyblue">
-            <li class="active"><a href="{{ route('home') }}">Home</a></li>
+            <li class="active"><a href="{{ route('front.home') }}">Home</a></li>
             <li class="grid"><a href="{{ route('front.product.index') }}">Shop</a></li>
             <li class="grid"><a href="#">Brands</a>
                 <div class="mepanel">

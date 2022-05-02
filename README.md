@@ -12,7 +12,8 @@
 
 ## TODO:
 
-1. reviews
+1. Add admin auth
+2. reviews
 3. product image gallery
 4. change currency
 5. admin....
