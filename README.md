@@ -18,22 +18,23 @@
 4. change currency
 5. admin....
 6. after add brand need to re-cache (add obs with job)
-7. api...
+7. api... + swoole
 8. mail or chat notification after order confirmation by admin
 
 ###Current route:
 
-| Method | Url | ControllerMethod |description|
-| ------------- |:-------------- |:----------------:|----------------|
-| GET | / |     __invoke |Home route|
-| GET | /product/ | index |Show all products |
-| GET | /product/{slug} | show |Show product by slug|
-| GET | /brand/ | index |Show all brands|
-| GET | /brand/{slug} | show |Show brand by slug|
-| GET | /cart/ | index |Show users' cart|
-| POST | /add-to-cart/ | addToCart |Add product to cart|
-| POST | /remove-cart/ | remove |Remove product from cart|
-| POST | /orders/ | store |Create new order|
+| Method | Url             | ControllerMethod | description              |
+| ------------- |:----------------|:----------------:|--------------------------|
+| GET | /               |     __invoke     | Home route               |
+| GET | /product/       |      index       | Show all products        |
+| GET | /product/{slug} |       show       | Show product by slug     |
+| GET | /brand/         |      index       | Show all brands          |
+| GET | /brand/{slug}   |       show       | Show brand by slug       |
+| GET | /cart/          |      index       | Show users' cart         |
+| POST | /add-to-cart/   |    addToCart     | Add product to cart      |
+| POST | /remove-cart/   |      remove      | Remove product from cart |
+| POST | /orders/        |      store       | Create new order         |
+| POST | /admin/         |     __invoke     | Admin home route         |
 
 
 
